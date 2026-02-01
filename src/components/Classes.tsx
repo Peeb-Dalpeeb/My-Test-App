@@ -2,7 +2,7 @@ import { FiClock, FiMoreHorizontal } from "react-icons/fi";
 
 export function Classes() {
   return (
-    <div className="flex-1 overflow-y-auto p-10 bg-gray-50">
+    <main className="flex-1 overflow-y-auto p-10 bg-gray-50">
       
       <header className="mb-8">
         <h1 className="text-3xl font-bold text-gray-800">My Classes</h1>
@@ -39,6 +39,6 @@ export function Classes() {
         </div>
       </div>
 
-    </div>
+    </main>
   );
 }
