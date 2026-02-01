@@ -4,6 +4,7 @@ interface MenuButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     icon: React.ReactNode;
     label: string;
     variant?: 'primary' | 'ghost';
+    collapsed?: boolean;
 }
 
 export function MenuButton({ 
@@ -11,6 +12,7 @@ export function MenuButton({
     label,
     variant = 'ghost',
     className = '',
+    collapsed = false,
     ...props
 }: MenuButtonProps) {
     const baseStyles = "flex items-center gap-5 p-4 rounded-2xl font-medium w-full transition-colors";
@@ -24,7 +26,9 @@ export function MenuButton({
             <span className="text-2xl flex-shrink-0" aria-hidden="true">
                 {icon}
             </span>
-            <span>{label}</span>
+            {!collapsed && (
+                <span>{label}</span>
+            )}
         </button>
     );
 }
