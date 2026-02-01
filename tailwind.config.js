@@ -8,6 +8,7 @@ export default {
       },
       colors: {
         primary: '#1294F2',
+        muted: '#7A7E86',
       },
     },
   },
