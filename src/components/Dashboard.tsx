@@ -3,7 +3,7 @@ import { FiUsers, FiBookOpen, FiAward } from "react-icons/fi";
 export function Dashboard() {
   return (
     // 'flex-1' tells this container: "Take up all the remaining space on the screen"
-    <div className="flex-1 overflow-y-auto p-10 bg-gray-50 ">
+    <main className="flex-1 overflow-y-auto p-10 bg-gray-50 ">
       
       {/* Header Section */}
       <header className="mb-8">
@@ -42,6 +42,6 @@ export function Dashboard() {
         </div>
 
       </div>
-    </div>
+    </main>
   );
 }
