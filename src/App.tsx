@@ -1,26 +1,19 @@
-import { Profile } from './components/Profile'
-import profileImage from './Assets/Young Woman Image.png'
-import { MenuButtons } from './components/MenuButtons'
-import { RxDashboard } from "react-icons/rx";
+import { useState } from 'react';
+import { Sidebar } from './components/Sidebar';
+import { Dashboard } from './components/Dashboard';
+import { Classes } from './components/Classes';
 
 function App() {
-
+  const [activeTab, setActiveTab] = useState("Dashboard");
   return (
-    <main className="flex flex-col items-center py-10 ">
-      <Profile
-        imageUrl={profileImage}
-        name="Aster Seawalker"
-        occupation="Computer Science"
-      />
-      <div className="flex flex-col w-full max-w-xs px-10 gap-5">
-        <MenuButtons
-          icon={<RxDashboard />}
-          name="Dashboard"
-        />
-      </div>
+    <main className="flex h-screen overflow-hidden">
+      <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+      
+      {activeTab === "Dashboard" && <Dashboard />}
+      {activeTab === "Classes" && <Classes />}
+
     </main>
 
- 
   )
 }
 
