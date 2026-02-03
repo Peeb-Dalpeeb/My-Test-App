@@ -39,11 +39,11 @@ export function Sidebar({activeTab, setActiveTab}: SidebarProps) {
     const [collapsed, setCollapsed] = useState(false);
 
   return (
-    <aside className={`flex overflow-y-auto flex-col [scrollbar-gutter:stable] items-center pt-10 pb-5 ${collapsed ? 'w-25' : 'w-80'} h-screen border-r border-gray-200`}>
-      <div className="w-full flex justify-end px-4 mb-4">
-        <button 
+    <aside className={`flex overflow-y-auto flex-col items-center pt-10 pb-5 ${collapsed ? 'w-20' : 'w-80 [scrollbar-gutter:stable]'} h-screen border-r border-gray-200`}>
+      <div className={`w-full relative flex ${collapsed ? "flex-col gap-2" : "justify-center"}`}>
+         <button 
              onClick={() => setCollapsed(!collapsed)} 
-             className="p-2 rounded-full hover:bg-gray-100 text-gray-500"
+             className={`rounded-full hover:bg-gray-100 text-gray-500 ${collapsed ? "self-center mb-4" : "absolute right-4"}`}
              aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
         >
              <RxChevronLeft 
@@ -51,13 +51,13 @@ export function Sidebar({activeTab, setActiveTab}: SidebarProps) {
                 size={24} 
              />
         </button>
-      </div>
-      <Profile
+        <Profile
         imageUrl={profileImage}
         name="Aster Seawalker"
         occupation="Computer Science"
         isCollapsed={collapsed}
       />
+      </div>
       <div className={`flex flex-col ${collapsed ? '' : 'w-full px-10'}  gap-3`}>
         {MENU_ITEMS.map(({ icon, label }) => (
           <MenuButton 

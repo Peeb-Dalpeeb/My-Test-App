@@ -8,7 +8,7 @@ export function Dashboard() {
   return (
     <MainLayout>
       <PageHeader 
-        title="Welcome back, Aster!" 
+        title="Welcome back to your destiny, Aster!" 
         subtitle="Here is what's happening with your classes today." 
       />
 

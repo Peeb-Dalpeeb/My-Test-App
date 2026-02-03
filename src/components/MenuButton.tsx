@@ -23,7 +23,7 @@ export function MenuButton({
 
     return (
         <button type="button" className={`${baseStyles} ${variantStyles} ${className}`} {...props}>
-            <span className="text-2xl flex-shrink-0" aria-hidden="true">
+            <span className={`${collapsed ? "text-lg" : "text-2xl"} flex-shrink-0`} aria-hidden="true">
                 {icon}
             </span>
             {!collapsed && (
